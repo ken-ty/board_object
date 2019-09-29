@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ .
-    '/libs/smarty.class.php';
+    '/libs/Smarty.class.php';
 $fruit = 'リンゴリラ';
 $smarty = new Smarty();
 $smarty->setTemplateDir(__DIR__ . '/templates');
