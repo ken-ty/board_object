@@ -1,7 +1,7 @@
 <?php
 
 require_once  __DIR__ . '/BaseController.php';
-require_once  __DIR__ . '../libs/dao/BoardDao.php';
+require_once  __DIR__ . '/../libs/dao/BoardDao.php';
 
 class IndexController extends BaseController {
 
