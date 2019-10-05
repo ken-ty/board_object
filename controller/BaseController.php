@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/../library/smarty/Smarty.class.php';
 require_once __DIR__ . '/../libs/dao/UserDao.php';
-require_once  __DIR__ '/../libs/entity/UserEntity.php';
+require_once __DIR__ . '/../libs/entity/UserEntity.php';
 
 abstract class BaseController
 {
@@ -40,16 +40,18 @@ abstract class BaseController
             $password = empty($_SESSION['password']) ? '' : $_SESSION['password'];
             $this->user = $this->userDao->findByMailAndPassword($mail, $password);
             //ログイン必須でログインしていなかったらログインページに遷移する
-            if($this->isLogin && empty($this->user)) {
+            if ($this->isLogin && empty($this->user)) {
                 header('Location: ./login.php');
                 exit();
             }
             $this->smarty->assign('user', $this->user);
             $this->main();
             $this->smarty->display($this->template);
-        } catch(\Eception $e){ echo $e->getMessage();}
-$this ->afterMain();
-}
+        } catch (\Exception $e) {
+            echo $e->getMessage();
+        }
+        $this->afterMain();
+    }
     protected function beforeMain(){
 
     }
