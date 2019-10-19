@@ -7,11 +7,11 @@ class BoardEntity{
     public $created;
     public $modified;
 
-    public function __cnstruct($data)
+    public function __construct($data)
     {
-        $this->id       = $data['id'      ];
-        $this->title    = $data['title'   ];
-        $this->created  = $data['created' ];
+        $this->id       = $data['id'];
+        $this->title    = $data['title'];
+        $this->created  = $data['created'];
         $this->modified = $data['modified'];
     }
 }
