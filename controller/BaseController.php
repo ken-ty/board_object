@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../library/smarty/Smarty.class.php';
+require_once __DIR__ . '/../library/Smarty.class.php';
 require_once __DIR__ . '/../libs/dao/UserDao.php';
 require_once __DIR__ . '/../libs/entity/UserEntity.php';
 
@@ -17,15 +17,18 @@ abstract class BaseController
     protected  $user;
 
     /** @var Boolean ログイン必須か */
-    protected $islogin = true;
+    protected $isLogin = true;
 
+    /**
+     * BaseController constructor.
+     */
     public function __construct()
     {
         //smartyの読み込みと定義
         $this->smarty = new Smarty();
         $this->smarty->escape_html = true;
         $this->smarty->setTemplateDir(__DIR__ . '/../templates');
-        $this->smarty->setCompileDir(__DIR__ . '/../templates_c');
+        $this->smarty->setCompileDir(  __DIR__ . '/../templates_c');
         $this->userDao = new UserDao();
 
     }
@@ -36,7 +39,7 @@ abstract class BaseController
             $this->beforeMain();
             //ログイン処理
             session_start();
-            $mail = empty($_SESSION['mail']) ? '' : $_SESSION['mail'];
+            $mail     = empty($_SESSION['mail'    ]) ? '' : $_SESSION['mail'    ];
             $password = empty($_SESSION['password']) ? '' : $_SESSION['password'];
             $this->user = $this->userDao->findByMailAndPassword($mail, $password);
             //ログイン必須でログインしていなかったらログインページに遷移する
