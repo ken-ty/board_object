@@ -33,8 +33,8 @@ class UserDao extends Database
     {
         $sql = 'SELECT * FROM `users` WHERE mail = :mail AND password = password';
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindValue(':mail',     $mail,     \PDO::PAEAM_STR);
-        $stmt->bindValue(':password', $password, \PDO::PAEAM_STR);
+        $stmt->bindValue(':mail',     $mail,     \PDO::PARAM_STR);
+        $stmt->bindValue(':password', $password, \PDO::PARAM_STR);
         $stmt->execute();
         $data = $stmt->fetch();
         return empty($data) ? null : new UserEntity($data);
