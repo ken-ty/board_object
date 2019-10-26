@@ -9,7 +9,7 @@ abstract class Database
     {
         $DBSERVER = 'localhost';
         $DBUSER = 'board';
-        $DBPASSWD = "boardpd";
+        $DBPASSWD = "boardpw";
         $DBNAME = 'board';
 
         $dsn = 'mysql:'
