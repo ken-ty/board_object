@@ -7,7 +7,10 @@
 <body>
     {include file="common/header.tpl"}
     <h1>トップ</h1>
-    <div>{$user->name}さんようこそ</div>
+    {if !empty($user)}
+        <div>{$user->name}さんようこそ</div>
+    {else}
+    {/if}
     <div>
         掲示板一覧
         <ul>
@@ -18,3 +21,4 @@
     </div>
 </body>
 </html>
+
