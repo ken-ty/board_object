@@ -2,7 +2,7 @@
     body {
         background: #eeeeee:
     }
-    div {
+    div#originalhedder{
         background: #ffffff:
         width: 300px;
         padding: 10px;
@@ -12,7 +12,7 @@
     }
 </style>
 <header>
-    <div>
+    <div#originalhedder>
         <a href="/board_object/index.php">TOP</a>
         <a href="/board_object/create_board.php">掲示板作成</a>
         {if !empty($user)}
