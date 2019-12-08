@@ -1,4 +1,17 @@
-<header data-background-color=:#39C;>
+<style>
+    body {
+        background: #eeeeee:
+    }
+    div {
+        background: #ffffff:
+        width: 300px;
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #cccccc;
+        margin: 30px auto;
+    }
+</style>
+<header>
     <div>
         <a href="/board_object/index.php">TOP</a>
         <a href="/board_object/create_board.php">掲示板作成</a>
@@ -10,5 +23,4 @@
         {/if}
     </div>
 </header>
-
 <!-- smartyのif分が見やすくて感動！！！ -->
