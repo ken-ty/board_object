@@ -12,7 +12,7 @@
     }
 </style>
 <header>
-    <div#originalhedder>
+    <div id="originalhedder">
         <a href="/board_object/index.php">TOP</a>
         <a href="/board_object/create_board.php">掲示板作成</a>
         {if !empty($user)}
